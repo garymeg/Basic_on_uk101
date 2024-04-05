@@ -798,7 +798,7 @@ L23E6:
 FIX_LINKS:
         jsr     SETPTRS           
         lda     TXTTAB          
-        ldy     TXTTAB+           
+        ldy     TXTTAB+1           
         sta     INDEX         
         sty     INDEX+1           
         clc
