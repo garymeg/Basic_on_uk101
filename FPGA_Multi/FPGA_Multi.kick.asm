@@ -796,18 +796,18 @@ L23E6:
 // RE-ESTABLISH ALL FORWARD LINKS
 // ----------------------------------------------------------------------------
 FIX_LINKS:
-        jsr     SETPTRS
-        lda     TXTTAB
-        ldy     TXTTAB+1
-        sta     INDEX
-        sty     INDEX+1
+        jsr     SETPTRS           
+        lda     TXTTAB          
+        ldy     TXTTAB+           
+        sta     INDEX         
+        sty     INDEX+1           
         clc
 L23FA:
-        ldy     #$01
-        lda     (INDEX),y
-        bne     *+5        // beq Long jump
-        jmp     L2351
-
+        ldy     #$01           
+        lda     (INDEX),y     
+        bne     *+5             // beq Long jump
+        jmp     L2351     
+      
         ldy     #$04
 L2405:
         iny
@@ -1352,9 +1352,11 @@ SETDA:
         sta     DATPTR
         sty     DATPTR+1
         rts
+ 
 // ----------------------------------------------------------------------------
 // SEE IF CONTROL-C TYPED
 // ----------------------------------------------------------------------------
+
 
 ISCNTC:
 // MODIFIED CALL BY G.SEARLE FROM THE ORIGINAL OSI CODE
@@ -1970,19 +1972,19 @@ L2ABE:
 // 				$40 FOR GET
 //				$98 FOR READ
 // ----------------------------------------------------------------------------
-        sta     INPUTFLG
-        stx     INPTR
-        sty     INPTR+1
+        sta.zp  INPUTFLG
+        stx.zp  INPTR
+        sty.zp  INPTR+1
 PROCESS_INPUT_ITEM:
         jsr     PTRGET
-        sta     FORPNT
-        sty     FORPNT+1
+        sta.zp  FORPNT
+        sty.zp  FORPNT+1
         lda.zp  TXTPTR
         ldy.zp  TXTPTR+1
-        sta     TXPSV
-        sty     TXPSV+1
-        ldx     INPTR
-        ldy     INPTR+1
+        sta.zp  TXPSV
+        sty.zp  TXPSV+1
+        ldx.zp  INPTR
+        ldy.zp  INPTR+1
         stx.zp  TXTPTR
         sty.zp  TXTPTR+1
         jsr     CHRGOT
@@ -2044,10 +2046,10 @@ INPUT_MORE:
 L2B48:
         lda.zp  TXTPTR
         ldy.zp  TXTPTR+1
-        sta     INPTR
-        sty     INPTR+1
-        lda     TXPSV
-        ldy     TXPSV+1
+        sta.zp  INPTR
+        sty.zp  INPTR+1
+        lda.zp  TXPSV
+        ldy.zp  TXPSV+1
         sta.zp  TXTPTR
         sty.zp  TXTPTR+1
         jsr     CHRGOT
@@ -5843,7 +5845,7 @@ QT_BYTES_FREE:
 .label ACIAStatus = ACIA+0
 .label ACIAData = ACIA+1
 
-* = $FF00 "IOHANDLER"
+* = * "IOHANDLER"
 
 // _____________________________________________________________________________
 // COLD Start/Reset Entry Point

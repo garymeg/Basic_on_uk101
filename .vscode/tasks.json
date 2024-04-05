@@ -21,8 +21,8 @@
       "label": "Build binary",
       "type": "shell",
       "windows": {
-  //      "command": "java -cp E:\\C64\\C64Tools\\KickAss\\KickAss.jar kickass.KickAssembler ${relativeFileDirname}/${fileBasenameNoExtension}.asm -binfile -fillbyte 234 -odir ./bin -o ./bin/${fileBasenameNoExtension}.bin -bytedump"
-          "command": "java -cp <Your Path to KickAss.jar> kickass.KickAssembler ${relativeFileDirname}/${fileBasenameNoExtension}.asm -binfile -fillbyte 234 -odir ./bin -o ./bin/${fileBasenameNoExtension}.bin -bytedump"
+        "command": "java -cp E:\\C64\\C64Tools\\KickAss\\KickAss.jar kickass.KickAssembler ${relativeFileDirname}/${fileBasenameNoExtension}.asm -binfile -fillbyte 234 -odir ${workspaceFolder}/build -o ${workspaceFolder}/build/${fileBasenameNoExtension}.bin -bytedump"
+  //        "command": "java -cp <Your Path to KickAss.jar> kickass.KickAssembler ${relativeFileDirname}/${fileBasenameNoExtension}.asm -binfile -fillbyte 234 -odir ./bin -o ./build/${fileBasenameNoExtension}.bin -bytedump"
       },
       "problemMatcher": [],
       "group": {
